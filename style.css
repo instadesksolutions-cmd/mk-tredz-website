@@ -1,0 +1,68 @@
+/* style.css */
+
+/* Glassmorphism for Navbar */
+.glass-header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+/* Custom Scrollbar for a Premium Look */
+::-webkit-scrollbar { 
+    width: 8px; 
+}
+::-webkit-scrollbar-track { 
+    background: #fdf2f4; 
+}
+::-webkit-scrollbar-thumb { 
+    background: #da536e; 
+    border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover { 
+    background: #c53755; 
+}
+
+/* Image Hover Zoom Effect for Products */
+.img-zoom-container { 
+    overflow: hidden; 
+}
+.img-zoom { 
+    transition: transform 0.7s ease; 
+}
+.group:hover .img-zoom { 
+    transform: scale(1.1); 
+}
+
+/* Floating Animation for Hero Section Images */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+.animate-float { 
+    animation: float 6s ease-in-out infinite; 
+}
+
+/* Custom Toast Notification styling */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #4a111e;
+    color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    padding: 16px;
+    position: fixed;
+    z-index: 100;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.5s, bottom 0.5s;
+}
+
+#toast.show {
+    visibility: visible;
+    opacity: 1;
+    bottom: 50px;
+}
